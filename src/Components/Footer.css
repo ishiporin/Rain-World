@@ -1,0 +1,21 @@
+.storesLogos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.storesLogos > :first-child {
+    filter: invert(1);
+}
+
+.storesLogos > img {
+    width: 12em;
+    margin: 0em 2em;
+    user-select: none;
+}
+
+#copyright {
+    font-family: 'Lato', sans-serif;
+    width: 50em;
+    color: #FFF
+}

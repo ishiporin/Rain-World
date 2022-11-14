@@ -10,8 +10,8 @@ export default App => {
         <RainWorld />
         <DownPour />
 
-        {/* <Credits />
-        <Footer />  */}
+        <Credits />
+        <Footer />
     </div>
   )
 }

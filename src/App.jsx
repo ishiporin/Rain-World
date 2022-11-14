@@ -8,9 +8,10 @@ export default App => {
   return(
     <div className="container">
         <RainWorld />
-        {/* <DownPour />
-        <Credits />
-        <Footer /> */}
+        <DownPour />
+
+        {/* <Credits />
+        <Footer />  */}
     </div>
   )
 }

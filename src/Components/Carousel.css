@@ -1,0 +1,47 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55em;
+    overflow: hidden;
+    margin: 3em;
+    position: relative;
+}
+
+
+.arrows { 
+    display: flex;
+    justify-content: space-between;
+    color: rgb(197, 197, 197);
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    font-size: 30pt;
+}
+
+.arrow {
+    user-select: none;
+    cursor: pointer;
+    margin: 1em;
+    transform: scale(0.8);
+    transition: 150ms;
+}
+
+.arrow:hover {
+    transform: scale(1); 
+    color: #fff
+}
+
+.slide {
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+.active {
+    opacity: 1;
+}
+
+.slideImage {
+    
+    width: 100%
+}

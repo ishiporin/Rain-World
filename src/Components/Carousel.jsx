@@ -1,7 +1,7 @@
 import './Carousel.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-let RainWorldI = [
+let rainWorldI = [
             '../src/assets/rw1.jpg',
             '../src/assets/rw2.jpg',
             '../src/assets/rw3.jpg',
@@ -9,7 +9,7 @@ let RainWorldI = [
             '../src/assets/rw5.jpg',
             '../src/assets/rw6.jpg'
 ]
-let DownPourI = [
+let downPourI = [
     '../src/assets/dp1.png',
     '../src/assets/dp2.png',
     '../src/assets/dp3.png',
@@ -17,19 +17,24 @@ let DownPourI = [
     '../src/assets/dp5.png',
     '../src/assets/dp6.png'
 ]
-let RainWorldRI = [
-    '../src/assets/rwr1.jpg',
-    '../src/assets/rwr2.png',
-    '../src/assets/rwr3.png',
-    '../src/assets/rwr4.png',
-    '../src/assets/rwr5.png',
-    '../src/assets/rwr6.png'
-]
+// let RainWorldRI = [
+//     '../src/assets/rwr1.jpg',
+//     '../src/assets/rwr2.png',
+//     '../src/assets/rwr3.png',
+//     '../src/assets/rwr4.png',
+//     '../src/assets/rwr5.png',
+//     '../src/assets/rwr6.png'
+// ]
 
-
-export const RainWorldCS = () => {
+export const RainWorldCS = () => { 
+useEffect(() => {
+    rainWorldI.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+    }), [rainWorldI]
+})
     const [current, setCurrent] = useState(4);
-    const length = RainWorldI.length;
+    const length = rainWorldI.length;
 
     const nextSlide = () => (
         setCurrent(current === length - 1 ? 0 : current + 1)
@@ -38,7 +43,7 @@ export const RainWorldCS = () => {
         setCurrent(current === 0 ? length - 1 : current - 1)
     )
 
-    if(!Array.isArray(RainWorldI) || RainWorldI <= 0) {
+    if(!Array.isArray(rainWorldI) || rainWorldI <= 0) {
         return null
     }
     return (
@@ -47,7 +52,7 @@ export const RainWorldCS = () => {
                     <span className='arrow' onClick={prevSlide}>‹</span>
                     <span className='arrow' onClick={nextSlide}>›</span>
                 </div>
-                {RainWorldI.map((url, index) => {
+                {rainWorldI.map((url, index) => {
                     return (
                         <div
                         className={index === current ? 'slide active' : 'slide'}
@@ -61,8 +66,15 @@ export const RainWorldCS = () => {
 }
 
 export const DownPourCS = () => {
+    useEffect(() => {
+        downPourI.forEach((url) => {
+            const img = new Image();
+            img.src = url;
+        }), [downPourI]
+    })
+
     const [current, setCurrent] = useState(1);
-    const length = DownPourI.length;
+    const length = downPourI.length;
 
     const nextSlide = () => (
         setCurrent(current === length - 1 ? 0 : current + 1)
@@ -71,7 +83,7 @@ export const DownPourCS = () => {
         setCurrent(current === 0 ? length - 1 : current - 1)
     )
 
-    if(!Array.isArray(DownPourI) || DownPourI <= 0) {
+    if(!Array.isArray(downPourI) || downPourI <= 0) {
         return null
     }
     return (
@@ -80,7 +92,7 @@ export const DownPourCS = () => {
                     <span className='arrow' onClick={prevSlide}>‹</span>
                     <span className='arrow' onClick={nextSlide}>›</span>
                 </div>
-                {DownPourI.map((url, index) => {
+                {downPourI.map((url, index) => {
                     return (
                         <div
                         className={index === current ? 'slide active' : 'slide'}

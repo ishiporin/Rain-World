@@ -32,16 +32,6 @@
     color: #fff
 }
 
-.slide {
-    opacity: 0;
-    transition: .5s ease-in-out;
-}
-
-.active {
-    opacity: 1;
-}
-
 .slideImage {
-    
     width: 100%
 }

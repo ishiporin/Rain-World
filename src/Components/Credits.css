@@ -5,11 +5,12 @@
     flex-direction: column;
     color: #FFF;
     font-family: 'Lato', sans-serif;
+    width: 52%;
 }
 
 hr {
     background-color: #FFF;
-    width: 90%;
+    width: 60%;
     height: 3px;
     margin: 1em;
 }
@@ -20,7 +21,8 @@ hr {
     justify-content: flex-start;
     flex-direction: column;
     list-style: none;
-    margin-bottom: 5em;
+    width: 100%;
+    margin-bottom: 1em;
 }
 .creditsFamily > li > h1 {
     color: #FFF;
@@ -29,6 +31,8 @@ hr {
     margin: 0.5em;
 }
 .creditsFamily > li > p{
+    width: 100%;
+    margin: 0.5em 0;
     text-align: justify;
     color: rgb(134, 134, 134)
 }
@@ -36,16 +40,44 @@ hr {
 .logos {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 80%;
 }
 
 #videocult {
-    width: 15em;
+    width: 25%;
     margin: 2em
 }
 
 #adultswimgames {
     filter: invert(1);
-    width: 16em;
+    width: 25%;
+}
+
+@media screen and (max-width: 768px) {
+    .logos {
+        justify-content: center;
+    }
+    #videocult {
+        width: 50%;
+        margin: 0.5em
+    }
+    
+    #adultswimgames {
+        filter: invert(1);
+        width: 50%;
+        margin: 0.5em
+    }
+    .creditsFamily {
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+    }
+
+    .creditsFamily > li > h1{
+        font-size: 14pt;
+    }
+    hr {
+        width: 82%;
+    }
 }

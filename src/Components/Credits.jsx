@@ -1,12 +1,14 @@
 import './Credits.css'
+import videoCultLogo from '../assets/videocultlogo.png'
+import adultSwimLogo from '../assets/asg.png'
 
 function Credits() {
     return (
         <div className="container">
             <div className="credits">
                 <div className="logos">
-                    <img src="../src/assets/videocultlogo.png" alt="" id='videocult'/>
-                    <img src="../src/assets/asg.png" alt="" id='adultswimgames'/>
+                    <img src={videoCultLogo} alt="" id='videocult'/>
+                    <img src={adultSwimLogo} alt="" id='adultswimgames'/>
                 </div>
             
                 <hr />

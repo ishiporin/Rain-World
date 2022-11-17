@@ -5,13 +5,13 @@
     justify-content: center;
     background-color: rgb(0, 0, 0);
     text-align: center;
-    width: 80em;
+    width: 60%;
     position: relative;
     overflow: hidden;
 }
 
 .dpBackground > img {
-    width: 80em;
+    width: 100%;
 }
 
 .dpBackground::after
@@ -83,5 +83,72 @@
 }
 
 .dpCarousel > p {
+    font-size: 12pt;
+}
+
+@media screen and (max-width: 768px) {
+    .dpBackground
+{
+    width: 100%;
+}
+
+.dpBackground > img {
+    width: 100%;
+}
+
+.newSlugcats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+
+.slugcat {
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.slugcat > img {
+    width: 6em;
+    height: 6em;
+}
+
+.aboutSC {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 12pt;
+    width: 100%;
+}
+
+.aboutSC > h1 {
+    color: #FFF;
     font-size: 14pt;
+    text-align: center;
+}
+
+.aboutSC > p {
+    text-align: justify;
+    margin: 0.5em 0;
+    width: 100%;
+}
+
+.dpBiography {
+    font-size: 12pt;
+}
+
+.dpCarousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(121, 121, 121);
+}
+
+.dpCarousel > p {
+    font-size: 12pt;
+}
 }

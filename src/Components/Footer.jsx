@@ -1,12 +1,15 @@
 import './Footer.css'
+import steam from '../assets/steam.png'
+import ps4 from '../assets/ps4.png'
+import swt from '../assets/switch.png'
 
 function Footer() {
     return (
         <div className="container">
             <div className="storesLogos">
-                <img src="../src/assets/ps4.png" alt="" />
-                <img src="../src/assets/steam.png" alt="" />
-                <img src="../src/assets/switch.png" alt="" />
+                <img src={ps4} alt="" />
+                <img src={steam} alt="" />
+                <img src={swt} alt="" />
             </div>
             <hr />
             <p id='copyright'>©Joar Jakobsson 2022. 

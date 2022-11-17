@@ -4,6 +4,10 @@
     justify-content: center;
 }
 
+hr {
+    width: 100%;
+}
+
 .storesLogos > :first-child {
     filter: invert(1);
 }
@@ -18,4 +22,22 @@
     font-family: 'Lato', sans-serif;
     width: 50em;
     color: #FFF
+}
+
+@media only screen and (max-width: 768px) {
+    .storesLogos {
+        flex-direction: column;
+        width: 100%;
+    }
+    .storesLogos > img {
+        width: 12em;
+        margin: 1em;
+    }
+    hr {
+        margin: 0.5em
+    }
+    #copyright {
+        font-size: 10pt;
+        width: 85%;
+    }
 }

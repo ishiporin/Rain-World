@@ -1,12 +1,13 @@
 import './RainWorld.css'
 import Trailer from './Trailer';
 import { RainWorldCS } from './Carousel';
+import rainWorldBanner from '../assets/RainWorldBanner.png'
 
 function RainWorld() {
     return (
         <div className="rwContainer">
             <div className="rwBackground">
-                <img src="../src/assets/RainWorldBanner.png" alt="" /> 
+                <img src={rainWorldBanner} alt="" /> 
             </div>
             <div className="rwContent">
                 <div className="rwBiography">

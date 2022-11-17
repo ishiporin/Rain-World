@@ -1,21 +1,34 @@
 import './Carousel.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useImage } from 'react';
+
+import rw1 from '../assets/rw1.jpg'
+import rw2 from '../assets/rw2.jpg'
+import rw3 from '../assets/rw3.jpg'
+import rw4 from '../assets/rw4.jpg'
+import rw5 from '../assets/rw5.jpg'
+import rw6 from '../assets/rw6.jpg'
+import dp1 from '../assets/dp1.png'
+import dp2 from '../assets/dp2.png'
+import dp3 from '../assets/dp3.png'
+import dp4 from '../assets/dp4.png'
+import dp5 from '../assets/dp5.png'
+import dp6 from '../assets/dp6.png'
 
 let rainWorldI = [
-            '../src/assets/rw1.jpg',
-            '../src/assets/rw2.jpg',
-            '../src/assets/rw3.jpg',
-            '../src/assets/rw4.jpg',
-            '../src/assets/rw5.jpg',
-            '../src/assets/rw6.jpg'
+            rw1,
+            rw2,
+            rw3,
+            rw4,
+            rw5,
+            rw6
 ]
 let downPourI = [
-    '../src/assets/dp1.png',
-    '../src/assets/dp2.png',
-    '../src/assets/dp3.png',
-    '../src/assets/dp4.png',
-    '../src/assets/dp5.png',
-    '../src/assets/dp6.png'
+    dp1,
+    dp2,
+    dp3,
+    dp4,
+    dp5,
+    dp6
 ]
 // let RainWorldRI = [
 //     '../src/assets/rwr1.jpg',
@@ -27,24 +40,26 @@ let downPourI = [
 // ]
 
 export const RainWorldCS = () => { 
-useEffect(() => {
-    rainWorldI.forEach((url) => {
+ useEffect(() => {
+     rainWorldI.forEach((url) => {
         const img = new Image();
         img.src = url;
-    }), [rainWorldI]
+     }), [rainWorldI]
 })
     const [current, setCurrent] = useState(4);
     const length = rainWorldI.length;
-
     const nextSlide = () => (
         setCurrent(current === length - 1 ? 0 : current + 1)
     )
     const prevSlide = () => (
         setCurrent(current === 0 ? length - 1 : current - 1)
     )
-
     if(!Array.isArray(rainWorldI) || rainWorldI <= 0) {
         return null
+    }
+
+    const loadedImage = () => {
+        console.log('Loaded')
     }
     return (
             <div className="carousel">
@@ -57,14 +72,15 @@ useEffect(() => {
                         <div
                         className={index === current ? 'slide active' : 'slide'}
                         key={index}>
-                            {index === current && (<img src={url} alt='screenshot' key={index} className='slideImage'/>)}
+                            {index === current && (
+                            <img src={url} alt='screenshot' key={index} className='slideImage' onLoad={loadedImage}/>
+                            )}
                         </div>
                     )
                 })}
             </div>
     )
 }
-
 export const DownPourCS = () => {
     useEffect(() => {
         downPourI.forEach((url) => {
